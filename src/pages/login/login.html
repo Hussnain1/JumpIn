@@ -1,0 +1,57 @@
+
+
+<ion-content overflow-scroll="false">
+    <ion-grid>
+      <ion-row>
+        <ion-col text-center>
+            <ion-icon class="loginIcon" name="ios-contact-outline"></ion-icon>
+            <h1>LOGIN</h1>
+        </ion-col>
+      </ion-row>
+      
+          <form>
+                  
+                    <ion-item>
+                      <ion-label floating>Email</ion-label>
+                      <ion-input type="text"></ion-input>
+                    </ion-item>
+                  
+                    <ion-item>
+                      <ion-label floating>Password</ion-label>
+                      <ion-input type="password"></ion-input>
+                    </ion-item>
+                   
+                    <button class="loginButton" ion-button type="submit" block color="light">LOGIN</button>
+                   
+          </form>
+          <ion-row>
+            <ion-col col-12>
+                <button class="forgotPassword" ion-button clear float-right>Forgot Password?</button>
+            </ion-col>
+        </ion-row>
+        <hr>        
+        <ion-row>
+          <ion-col>
+              <button class="forgotPassword" ion-button clear block [navPush]="SignUp">SIGN UP</button>
+              <p text-center>OR</p>
+            
+          </ion-col>
+        
+        </ion-row>
+      
+        <ion-row text-center>
+          <ion-col col-4>
+            
+          </ion-col>
+          <ion-col col-2>
+              <ion-icon class="socialIcon" name="logo-google"></ion-icon>
+            </ion-col>
+            <ion-col col-2>
+                <ion-icon class="socialIcon" name="logo-facebook"></ion-icon>
+              </ion-col>
+          <ion-col col-4>
+              
+            </ion-col>
+        </ion-row>
+    </ion-grid>
+  </ion-content>

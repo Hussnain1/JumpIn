@@ -1,0 +1,57 @@
+page-sign-up {
+    .scroll-content {
+        background: url('/assets/imgs/MainBG.jpg');
+        -webkit-background-size: cover;
+        -moz-background-size: cover;
+        background-size: cover;
+}
+    
+    .loginButton {
+        margin-top: 35px;
+    }
+
+    .loginIcon {
+        display: inline-block;
+        font-size: 5.0em;
+        color: white;
+    }
+
+    .grid {
+        width: 85%;
+    }
+
+    .scroll-content {
+        overflow-y: hidden;
+    }
+    
+    h1 {
+        color: #ffffff;
+        font-weight: 400;
+    }
+
+    .item-ios {
+        padding-left: 0;
+        padding-left: 0;
+        color: white;
+        background-color: transparent;
+        }
+
+   .forgotPassword {
+       color: #ffffff;
+       margin: 0.4rem 0rem;
+       padding: 0;
+   }
+
+   .socialIcon {
+       font-size: 2.5em;
+   }
+
+   .content-ios hr {
+    border: none;
+    border-top: 1px dotted #fff;
+    color: #fff;
+    background-color: transparent;
+    height: 0px;
+    width: 85%;
+}
+}

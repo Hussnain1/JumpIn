@@ -1,0 +1,21 @@
+page-home {
+    .scroll-content {
+        background: url('/assets/imgs/MainBG.jpg');
+        -webkit-background-size: cover;
+        -moz-background-size: cover;
+        background-size: cover;
+}
+    
+   
+    .jumpInLogo {
+        width: 70%;
+    }
+
+    .grid {
+        width: 85%;
+    }
+
+    .scroll-content {
+        overflow-y: hidden;
+    }
+}
