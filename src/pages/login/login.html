@@ -1,30 +1,30 @@
 
 
-<ion-content overflow-scroll="false">
+<ion-scroll>
     <ion-grid>
       <ion-row>
         <ion-col text-center>
-            <ion-icon class="loginIcon" name="ios-contact-outline"></ion-icon>
-            <h1>LOGIN</h1>
+            <ion-icon class="loginIcon hide-on-keyboard-open" name="ios-contact-outline"></ion-icon>
+            <h1 class="hide-on-keyboard-open">LOGIN00</h1>
         </ion-col>
       </ion-row>
-      
+      <ion-row>
           <form>
                   
                     <ion-item>
-                      <ion-label floating>Email</ion-label>
+                      <ion-label fixed>Email</ion-label>
                       <ion-input type="text"></ion-input>
                     </ion-item>
                   
                     <ion-item>
-                      <ion-label floating>Password</ion-label>
+                      <ion-label fixed>Password</ion-label>
                       <ion-input type="password"></ion-input>
                     </ion-item>
                    
                     <button class="loginButton" ion-button type="submit" block color="light">LOGIN</button>
-                   
           </form>
-          <ion-row>
+        </ion-row>
+        <ion-row>
             <ion-col col-12>
                 <button class="forgotPassword" ion-button clear float-right>Forgot Password?</button>
             </ion-col>
@@ -54,4 +54,4 @@
             </ion-col>
         </ion-row>
     </ion-grid>
-  </ion-content>
+  </ion-scroll>
