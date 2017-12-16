@@ -16,12 +16,8 @@ export class MyApp {
   constructor(platform: Platform, statusBar: StatusBar, splashScreen: SplashScreen) {
     firebase.initializeApp({
       apiKey: "AIzaSyBkviltfgacaUayDtk3hBNcX6hMakEF-50",
-      authDomain: "jumpin-61c7f.firebaseapp.com",
-      databaseURL: "https://jumpin-61c7f.firebaseio.com",
-      projectId: "jumpin-61c7f",
-      storageBucket: "jumpin-61c7f.appspot.com",
-      messagingSenderId: "513942448011"
-    });
+      authDomain: "jumpin-61c7f.firebaseapp.com"
+      });
     platform.ready().then(() => {
       // Okay, so the platform is ready and our plugins are available.
       // Here you can do any higher level native things you might need.
