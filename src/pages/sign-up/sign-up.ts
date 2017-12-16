@@ -19,12 +19,7 @@ import { IonicPage, NavController, NavParams, LoadingController , AlertControlle
 export class SignUpPage {
   Login = LoginPage;
 
-  constructor(public navCtrl: NavController, public navParams: NavParams, 
-    private authService: AuthService, private loadingCtrl: LoadingController, private alertCtrl: AlertController) {
-  }
-
-  ionViewDidLoad() {
-    console.log('ionViewDidLoad SignUpPage');
+  constructor(public navCtrl: NavController, public navParams: NavParams, private authService: AuthService, private loadingCtrl: LoadingController, private alertCtrl: AlertController) {
   }
 
   onSignUp(form: NgForm) {
@@ -39,12 +34,12 @@ export class SignUpPage {
         })
       .catch(
         error => {
-      loading.dismiss();
+        loading.dismiss();
         const alert = this.alertCtrl.create({
           title : 'Signup failed!',
           message : error.message,
           buttons: ['Ok']
-        }); 
+        });
         alert.present();
   });
 }
