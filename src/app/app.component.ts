@@ -1,26 +1,26 @@
+import { HomePage } from './../pages/home/home';
 import { Component } from '@angular/core';
 import { Platform } from 'ionic-angular';
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 import firebase from 'firebase';
 
-import { HomePage } from '../pages/home/home';
 import { LoginPage } from '../pages/login/login';
 
 @Component({
   templateUrl: 'app.html'
 })
 export class MyApp {
-  rootPage:any ;
+  rootPage:any = HomePage;
 
   constructor(platform: Platform, statusBar: StatusBar, splashScreen: SplashScreen) {
     firebase.initializeApp({
-      apiKey: "AIzaSyCKmZgh10PSDXp9-vXDWirXPc2c9Wv6Plw",
-      authDomain: "user-authorization-8fe02.firebaseapp.com",
-      databaseURL: "https://user-authorization-8fe02.firebaseio.com",
-      projectId: "user-authorization-8fe02",
-      storageBucket: "user-authorization-8fe02.appspot.com",
-      messagingSenderId: "259703394889"
+      apiKey: "AIzaSyBkviltfgacaUayDtk3hBNcX6hMakEF-50",
+      authDomain: "jumpin-61c7f.firebaseapp.com",
+      databaseURL: "https://jumpin-61c7f.firebaseio.com",
+      projectId: "jumpin-61c7f",
+      storageBucket: "jumpin-61c7f.appspot.com",
+      messagingSenderId: "513942448011"
     });
     platform.ready().then(() => {
       // Okay, so the platform is ready and our plugins are available.

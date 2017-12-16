@@ -1,3 +1,4 @@
+import { AuthService } from './../services/auth';
 import { SignUpPage } from './../pages/sign-up/sign-up';
 import { BrowserModule } from '@angular/platform-browser';
 import { ErrorHandler, NgModule } from '@angular/core';
@@ -33,6 +34,7 @@ import { LoginPage } from '../pages/login/login';
   providers: [
     StatusBar,
     SplashScreen,
+    AuthService,
     {provide: ErrorHandler, useClass: IonicErrorHandler}
   ]
 })
