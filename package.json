@@ -1,5 +1,5 @@
 {
-  "name": "JumpIn",
+  "name": "jumpin",
   "version": "0.0.1",
   "author": "Ionic Framework",
   "homepage": "http://ionicframework.com/",
@@ -63,5 +63,11 @@
     "platforms": [
       "ios"
     ]
-  }
+  },
+  "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "[YOUR_REPOSITORY_URL]"
+  },
+  "license": "ISC"
 }

@@ -5,13 +5,11 @@ import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 import firebase from 'firebase';
 
-import { LoginPage } from '../pages/login/login';
-
 @Component({
   templateUrl: 'app.html'
 })
 export class MyApp {
-  rootPage:any ;
+  rootPage:any = HomePage;
 
   constructor(platform: Platform, statusBar: StatusBar, splashScreen: SplashScreen) {
     firebase.initializeApp({
@@ -23,15 +21,6 @@ export class MyApp {
       // Here you can do any higher level native things you might need.
       statusBar.styleDefault();
       splashScreen.hide();
-    });
-    const unsubscribe = firebase.auth().onAuthStateChanged( user => {
-      if (!user) {
-        this.rootPage = HomePage;
-        unsubscribe();
-      } else { 
-        this.rootPage = LoginPage;
-        unsubscribe();
-      }
     });
   }
 }
