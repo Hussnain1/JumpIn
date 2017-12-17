@@ -34,7 +34,7 @@ import { LoginPage } from '../pages/login/login';
   providers: [
     StatusBar,
     SplashScreen,
-    AuthJumpInService,
+    [AuthJumpInService],
     {provide: ErrorHandler, useClass: IonicErrorHandler}
   ]
 })
