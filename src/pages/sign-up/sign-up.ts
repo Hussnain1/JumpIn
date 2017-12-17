@@ -1,8 +1,8 @@
-import { AuthService } from './../../services/auth';
 import { NgForm } from '@angular/forms/';
 import { LoginPage } from './../login/login';
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams, LoadingController , AlertController} from 'ionic-angular';
+import { AuthService } from './../../services/auth';
 
 /**
  * Generated class for the SignUpPage page.
