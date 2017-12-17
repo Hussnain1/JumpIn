@@ -24,7 +24,7 @@ import { LoginPage } from '../pages/login/login';
       autoFocusAssist: false
   })
   ],
-  bootstrap: [IonicApp, AuthJumpInService],
+  bootstrap: [IonicApp],
   entryComponents: [
     MyApp,
     HomePage,
