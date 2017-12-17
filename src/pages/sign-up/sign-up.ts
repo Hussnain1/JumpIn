@@ -1,10 +1,8 @@
-import { AuthorizationServiceProvider } from './../../providers/authorization-service/authorization-service';
 import { NgForm } from '@angular/forms/';
 import { LoginPage } from './../login/login';
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams, LoadingController , AlertController} from 'ionic-angular';
-import { AuthService } from '../../services/auth';
-
+import { AuthJumpInService } from '../../services/authjService';
 
 @IonicPage()
 @Component({

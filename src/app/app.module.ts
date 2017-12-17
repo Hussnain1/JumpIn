@@ -8,7 +8,7 @@ import { StatusBar } from '@ionic-native/status-bar';
 import { MyApp } from './app.component';
 import { HomePage } from '../pages/home/home';
 import { LoginPage } from '../pages/login/login';
-import { AuthService } from '../services/auth';
+import { AuthJumpInService } from '../services/authJService';
 
 @NgModule({
   declarations: [
@@ -34,7 +34,7 @@ import { AuthService } from '../services/auth';
   providers: [
     StatusBar,
     SplashScreen,
-    AuthService,
+    AuthJumpInService,
     {provide: ErrorHandler, useClass: IonicErrorHandler}
   ]
 })
