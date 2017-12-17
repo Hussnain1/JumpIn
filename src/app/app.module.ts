@@ -9,7 +9,6 @@ import { MyApp } from './app.component';
 import { HomePage } from '../pages/home/home';
 import { LoginPage } from '../pages/login/login';
 import { AuthService } from '../services/auth';
-import { AuthorizationServiceProvider } from '../providers/authorization-service/authorization-service';
 
 @NgModule({
   declarations: [
@@ -35,8 +34,8 @@ import { AuthorizationServiceProvider } from '../providers/authorization-service
   providers: [
     StatusBar,
     SplashScreen,
-    {provide: ErrorHandler, useClass: IonicErrorHandler},
-    AuthorizationServiceProvider
+    AuthService,
+    {provide: ErrorHandler, useClass: IonicErrorHandler}
   ]
 })
 export class AppModule {}
