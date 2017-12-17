@@ -2,7 +2,7 @@ import { NgForm } from '@angular/forms/';
 import { LoginPage } from './../login/login';
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams, LoadingController , AlertController} from 'ionic-angular';
-//import { AuthJumpInService } from './../../services/authJService';
+import { AuthJumpInService } from './../../services/authJService';
 
 @IonicPage()
 @Component({
@@ -12,11 +12,11 @@ import { IonicPage, NavController, NavParams, LoadingController , AlertControlle
 export class SignUpPage {
   Login = LoginPage;
 
-  constructor(public navCtrl: NavController, public navParams: NavParams, /*private authService: AuthJumpInService,*/ private loadingCtrl: LoadingController, private alertCtrl: AlertController) {
+  constructor(public navCtrl: NavController, public navParams: NavParams, private authService: AuthJumpInService, private loadingCtrl: LoadingController, private alertCtrl: AlertController) {
   }
 
   onSignUp(form: NgForm) {
-    /*const loading = this.loadingCtrl.create({
+   /* const loading = this.loadingCtrl.create({
       content : 'Signing you up ...'
     });
     loading.present();
