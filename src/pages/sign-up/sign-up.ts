@@ -1,8 +1,10 @@
+import { AuthorizationServiceProvider } from './../../providers/authorization-service/authorization-service';
 import { NgForm } from '@angular/forms/';
 import { LoginPage } from './../login/login';
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams, LoadingController , AlertController} from 'ionic-angular';
-import { AuthService } from './../../services/auth';
+
+//import { AuthService } from './../../services/auth';
 
 /**
  * Generated class for the SignUpPage page.
@@ -19,7 +21,7 @@ import { AuthService } from './../../services/auth';
 export class SignUpPage {
   Login = LoginPage;
 
-  constructor(public navCtrl: NavController, public navParams: NavParams, private authService: AuthService, private loadingCtrl: LoadingController, private alertCtrl: AlertController) {
+  constructor(public navCtrl: NavController, public navParams: NavParams, private authService: AuthorizationServiceProvider, private loadingCtrl: LoadingController, private alertCtrl: AlertController) {
   }
 
   onSignUp(form: NgForm) {
