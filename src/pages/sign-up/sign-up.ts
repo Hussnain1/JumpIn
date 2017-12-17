@@ -2,7 +2,7 @@ import { NgForm } from '@angular/forms/';
 import { LoginPage } from './../login/login';
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams, LoadingController , AlertController} from 'ionic-angular';
-import { AuthJumpInService } from './../../services/authJService';
+import { AuthJumpInService } from '../../services/authJService';
 
 @IonicPage()
 @Component({
