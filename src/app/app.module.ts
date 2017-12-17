@@ -1,4 +1,4 @@
-import { AuthJumpInService } from './../services/authJService';
+//import { AuthJumpInService } from './../services/authJService';
 import { SignUpPage } from './../pages/sign-up/sign-up';
 import { BrowserModule } from '@angular/platform-browser';
 import { ErrorHandler, NgModule } from '@angular/core';
@@ -34,7 +34,7 @@ import { LoginPage } from '../pages/login/login';
   providers: [
     StatusBar,
     SplashScreen,
-    [AuthJumpInService],
+    //AuthJumpInService
     {provide: ErrorHandler, useClass: IonicErrorHandler}
   ]
 })
