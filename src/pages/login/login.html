@@ -5,22 +5,22 @@
       <ion-row>
         <ion-col text-center>
             <ion-icon class="loginIcon hide-on-keyboard-open" name="ios-contact-outline"></ion-icon>
-            <h1 class="hide-on-keyboard-open">LOGIN APP</h1>
+            <h1 class="hide-on-keyboard-open">LOGIN</h1>
         </ion-col>
       </ion-row>
           <form>
                   
                     <ion-item>
                       <ion-label floating>Email</ion-label>
-                      <ion-input type="text"></ion-input>
+                      <ion-input type="email" name="email" [(ngModel)]="user.email"></ion-input>
                     </ion-item>
                   
                     <ion-item>
                       <ion-label floating>Password</ion-label>
-                      <ion-input type="password"></ion-input>
+                      <ion-input type="password" name="password" [(ngModel)]="user.password"></ion-input>
                     </ion-item>
                    
-                    <button class="loginButton" ion-button type="submit" block color="light">LOGIN</button>
+                    <button class="loginButton" ion-button type="submit" block color="light" (click)="onSignIn(user)">LOGIN</button>
           </form>
         <ion-row>
             <ion-col col-12>

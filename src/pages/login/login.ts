@@ -1,6 +1,11 @@
+import { AngularFireAuth } from 'angularfire2/auth';
+import { User } from './../../model/user';
+import { NgForm } from '@angular/forms';
+import { AuthJumpInService } from './../../services/authJService';
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { IonicPage, NavController, NavParams, LoadingController, AlertController } from 'ionic-angular';
 import { SignUpPage } from '../sign-up/sign-up';
+import { InterestPage } from '../interest/interest';
 
 /**
  * Generated class for the LoginPage page.
@@ -15,12 +20,36 @@ import { SignUpPage } from '../sign-up/sign-up';
   templateUrl: 'login.html',
 })
 export class LoginPage {
+
   SignUp = SignUpPage;
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+  interestPage = InterestPage;
+  user = {} as User;
+  constructor(public navCtrl: NavController, public navParams: NavParams, public afAuth:AngularFireAuth,
+    private loadingCtrl: LoadingController, private alertCtrl: AlertController) {
   }
 
-  ionViewDidLoad() {
-    console.log('ionViewDidLoad LoginPage');
+  onSignIn(user: User) {
+    const loading = this.loadingCtrl.create({
+      content : 'Signing you in ...'
+    });
+    loading.present();
+    setTimeout(() => {
+      this.afAuth.auth.signInWithEmailAndPassword(user.email, user.password)
+      .then(
+        data => {
+          loading.dismiss();
+          this.navCtrl.setRoot(this.interestPage);
+        })
+      .catch(
+        error => {
+        loading.dismiss();
+        const alert = this.alertCtrl.create({
+          title : 'Signin failed!',
+          message : error.message,
+          buttons: ['Ok']
+        });
+        alert.present();
+  });
+    }, 2000); 
   }
-
 }
