@@ -1,3 +1,4 @@
+import { UserProfilePage } from './../pages/user-profile/user-profile';
 import { User } from './../model/user';
 import { FIREBASE_CONFIG } from './app.firebase.config';
 import { SignUpPage } from './../pages/sign-up/sign-up';
@@ -14,6 +15,7 @@ import { AuthJumpInService } from '../services/authJService';
 import { InterestPage } from '../pages/interest/interest';
 import { AngularFireModule } from 'angularfire2';
 import { AngularFireAuthModule } from 'angularfire2/auth';
+import { AngularFireDatabaseModule } from 'angularfire2/database';
 
 
 @NgModule({
@@ -22,12 +24,14 @@ import { AngularFireAuthModule } from 'angularfire2/auth';
     HomePage,
     LoginPage,
     SignUpPage,
-    InterestPage
+    InterestPage,
+    UserProfilePage
   ],
   imports: [
     BrowserModule,
     AngularFireModule.initializeApp(FIREBASE_CONFIG),
     AngularFireAuthModule,
+    AngularFireDatabaseModule,
     IonicModule.forRoot(MyApp, {
       scrollAssist: false,
       autoFocusAssist: false
@@ -39,7 +43,8 @@ import { AngularFireAuthModule } from 'angularfire2/auth';
     HomePage,
     LoginPage,
     SignUpPage,
-    InterestPage
+    InterestPage,
+    UserProfilePage
   ],
   providers: [
     StatusBar,

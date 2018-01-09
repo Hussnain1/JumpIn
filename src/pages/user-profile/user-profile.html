@@ -1,0 +1,46 @@
+
+
+<ion-content>
+  <ion-grid>
+    <ion-row>
+      <ion-col text-center>
+          <ion-icon class="loginIcon" name="ios-person"></ion-icon>
+          <h1>USER PROFILE</h1>
+      </ion-col>
+    </ion-row>
+    
+        <form #f="ngForm">
+                
+          <ion-item>
+            <ion-label floating>Username</ion-label>
+            <ion-input type="text" name="username" [(ngModel)]="profile.username" required></ion-input>
+          </ion-item>
+        
+          <ion-item>
+            <ion-label floating>First Name</ion-label>
+            <ion-input type="text" name="fname" [(ngModel)]="profile.firstname" required></ion-input>
+          </ion-item>
+
+          <ion-item>
+            <ion-label floating>Last Name</ion-label>
+            <ion-input type="text" name="lname" [(ngModel)]="profile.lastname" required></ion-input>
+          </ion-item>
+
+          <ion-item>
+            <ion-label floating>Date of Birth</ion-label>
+            <ion-datetime displayFormat="MM/DD/YYYY" name="dob" [(ngModel)]="profile.dob"></ion-datetime>  
+          </ion-item>
+
+          <button class="loginButton" ion-button type="submit" block color="light" (click)="createProfile()" 
+                  [disabled]="!f.valid">CREATE PROFILE</button>
+                 
+                
+                </form>
+      
+      <ion-row>
+        <ion-col>
+            <button class="forgotPassword" ion-button clear block [navPush]="Login">Already a member? Sign In</button>
+            </ion-col>
+      </ion-row>
+    </ion-grid>
+</ion-content>

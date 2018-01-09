@@ -6,6 +6,7 @@ import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams, LoadingController, AlertController } from 'ionic-angular';
 import { SignUpPage } from '../sign-up/sign-up';
 import { InterestPage } from '../interest/interest';
+import { UserProfilePage } from '../user-profile/user-profile';
 
 /**
  * Generated class for the LoginPage page.
@@ -23,6 +24,8 @@ export class LoginPage {
 
   SignUp = SignUpPage;
   interestPage = InterestPage;
+  profile = UserProfilePage;
+
   user = {} as User;
   constructor(public navCtrl: NavController, public navParams: NavParams, public afAuth:AngularFireAuth,
     private loadingCtrl: LoadingController, private alertCtrl: AlertController) {
@@ -38,7 +41,7 @@ export class LoginPage {
       .then(
         data => {
           loading.dismiss();
-          this.navCtrl.setRoot(this.interestPage);
+          this.navCtrl.setRoot(this.profile);
         })
       .catch(
         error => {
