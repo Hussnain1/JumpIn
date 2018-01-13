@@ -11,34 +11,35 @@
       <ion-row>
         <ion-item>
           <ion-label>Basketball</ion-label>
-          <ion-checkbox [(ngModel)]="basketball"></ion-checkbox>
+          <ion-checkbox checked="false" (ionChange)="basketballFunction($event)" [(ngModel)]="sports.basketball"></ion-checkbox>
         </ion-item>
       
         <ion-item>
           <ion-label>Cricket</ion-label>
-          <ion-checkbox [(ngModel)]="cricket"></ion-checkbox>
+          <ion-checkbox checked="false" (ionChange)="cricketFunction($event)" [(ngModel)]="sports.cricket"></ion-checkbox>
         </ion-item>
+
       
         <ion-item>
           <ion-label>Football</ion-label>
-          <ion-checkbox [(ngModel)]="football"></ion-checkbox>
+          <ion-checkbox checked="false" (ionChange)="footballFunction($event)" [(ngModel)]="sports.football"></ion-checkbox>
         </ion-item>
 
         <ion-item>
           <ion-label>Badminton</ion-label>
-          <ion-checkbox [(ngModel)]="badminton"></ion-checkbox>
+          <ion-checkbox checked="false" (ionChange)="badmintonFunction($event)" [(ngModel)]="sports.badminton"></ion-checkbox>
         </ion-item>
 
         <ion-item>
           <ion-label>Tennis</ion-label>
-          <ion-checkbox [(ngModel)]="tennis"></ion-checkbox>
+          <ion-checkbox checked="false" (ionChange)="tennisFunction($event)" [(ngModel)]="sports.tennis"></ion-checkbox>
         </ion-item>
       
       </ion-row>
      
       <ion-row>
         <ion-col>
-            <button class="forgotPassword" ion-button clear block [navPush]="SignUp">Next</button>
+            <button class="forgotPassword" ion-button clear block (click)="addSports()" >NEXT</button>
            
           
         </ion-col>

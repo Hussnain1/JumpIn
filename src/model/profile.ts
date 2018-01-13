@@ -1,8 +1,6 @@
 export interface Profile {
-    
-    username: string;
+    dob: string;
     fname: string;
     lname: string;
-    dob: string;
-
+    username: string;
 }

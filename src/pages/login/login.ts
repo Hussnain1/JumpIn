@@ -1,3 +1,8 @@
+import { EventPage } from './../event/event';
+import { Profile } from './../../model/profile';
+import { AngularFireDatabase } from 'angularfire2/database';
+import { FirebaseListObservable, FirebaseObjectObservable } from 'angularfire2/database-deprecated';
+
 import { AngularFireAuth } from 'angularfire2/auth';
 import { User } from './../../model/user';
 import { NgForm } from '@angular/forms';
@@ -24,12 +29,15 @@ export class LoginPage {
 
   SignUp = SignUpPage;
   interestPage = InterestPage;
-  profile = UserProfilePage;
-
+  profile = UserProfilePage; 
+  event = EventPage;
   user = {} as User;
-  constructor(public navCtrl: NavController, public navParams: NavParams, public afAuth:AngularFireAuth,
-    private loadingCtrl: LoadingController, private alertCtrl: AlertController) {
+
+  constructor(public navCtrl: NavController, public navParams: NavParams, public afAuth:AngularFireAuth, 
+    private afDatabase: AngularFireDatabase, private loadingCtrl: LoadingController, private alertCtrl: AlertController) {
   }
+   
+  
 
   onSignIn(user: User) {
     const loading = this.loadingCtrl.create({
@@ -41,7 +49,21 @@ export class LoginPage {
       .then(
         data => {
           loading.dismiss();
-          this.navCtrl.setRoot(this.profile);
+          
+          const cUser = this.afAuth.auth.currentUser.uid;
+         
+            // subscribe to the observable
+            this.afDatabase.list(`profile/${cUser}`).valueChanges().subscribe(profile => {
+              console.log(profile.length);
+              if(profile.length == 0) {
+             this.navCtrl.setRoot(this.profile);
+              }
+              else {
+                this.navCtrl.setRoot(this.interestPage);
+              }
+         // const ab = this.afDatabase.database.ref(`profile/${currentUserUid}`)
+        }) 
+        // console.log(currentUserUid);
         })
       .catch(
         error => {

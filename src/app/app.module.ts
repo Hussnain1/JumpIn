@@ -1,3 +1,4 @@
+import { SkillsPage } from './../pages/skills/skills';
 import { UserProfilePage } from './../pages/user-profile/user-profile';
 import { User } from './../model/user';
 import { FIREBASE_CONFIG } from './app.firebase.config';
@@ -16,6 +17,7 @@ import { InterestPage } from '../pages/interest/interest';
 import { AngularFireModule } from 'angularfire2';
 import { AngularFireAuthModule } from 'angularfire2/auth';
 import { AngularFireDatabaseModule } from 'angularfire2/database';
+import { EventPage } from '../pages/event/event';
 
 
 @NgModule({
@@ -25,7 +27,9 @@ import { AngularFireDatabaseModule } from 'angularfire2/database';
     LoginPage,
     SignUpPage,
     InterestPage,
-    UserProfilePage
+    UserProfilePage,
+    SkillsPage,
+    EventPage  
   ],
   imports: [
     BrowserModule,
@@ -44,7 +48,9 @@ import { AngularFireDatabaseModule } from 'angularfire2/database';
     LoginPage,
     SignUpPage,
     InterestPage,
-    UserProfilePage
+    UserProfilePage,
+    SkillsPage,
+    EventPage
   ],
   providers: [
     StatusBar,

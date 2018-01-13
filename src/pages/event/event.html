@@ -1,0 +1,55 @@
+
+
+<ion-content>
+    <ion-grid>
+      <ion-row>
+        <ion-col text-center>
+            <ion-icon class="loginIcon hide-on-keyboard-open" name="ios-contact-outline"></ion-icon>
+            <h1 class="hide-on-keyboard-open">CREATE AN EVENT</h1>
+        </ion-col>
+      </ion-row>
+          <form>
+                  
+                    <ion-item>
+                      <ion-label floating>Event Name</ion-label>
+                      <ion-input type="text" name="eventName"></ion-input>
+                    </ion-item>
+                  
+                    <ion-item>
+                        <ion-label floating>Event Description</ion-label>
+                        <ion-input type="text" name="eventDesc"></ion-input>
+                      </ion-item>
+
+                      <ion-item>
+                          <ion-label floating>Total Members</ion-label>
+                          <ion-input type="number" name="eventMembers"></ion-input>
+                      </ion-item>
+
+                      <ion-item>
+                          <ion-label floating>Event Date</ion-label>
+                          <ion-datetime displayFormat="MM/DD/YYYY"></ion-datetime>
+                      </ion-item>
+
+                      <ion-item>
+                          <ion-label floating>Event Time</ion-label>
+                          <ion-datetime displayFormat="h:mm A" pickerFormat="h mm A"></ion-datetime>
+                      </ion-item>
+                   
+                      <ion-item>
+                          <ion-label floating>Event Location</ion-label>
+                          <ion-select>
+                            <ion-option value="">Business Bay</ion-option>
+                            <ion-option value="">Internet City</ion-option>
+                            <ion-option value="">Media City</ion-option>
+                            <ion-option value="">Dubai Marina</ion-option>
+                            <ion-option value="">Al Barsha</ion-option>
+                            <ion-option value="">Sports City</ion-option>
+                            <ion-option value="">Al Nahda</ion-option>
+                          </ion-select>
+                        </ion-item>
+                    <button class="loginButton" ion-button type="submit" block color="light">CREATE</button>
+          </form>
+      
+       
+    </ion-grid>
+  </ion-content>
