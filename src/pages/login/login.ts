@@ -32,6 +32,7 @@ export class LoginPage {
   profile = UserProfilePage; 
   event = EventPage;
   user = {} as User;
+  count = 1;
 
   constructor(public navCtrl: NavController, public navParams: NavParams, public afAuth:AngularFireAuth, 
     private afDatabase: AngularFireDatabase, private loadingCtrl: LoadingController, private alertCtrl: AlertController) {
@@ -51,19 +52,21 @@ export class LoginPage {
           loading.dismiss();
           
           const cUser = this.afAuth.auth.currentUser.uid;
-         
-            // subscribe to the observable
-            this.afDatabase.list(`profile/${cUser}`).valueChanges().subscribe(profile => {
+            this.afDatabase.list(`profile/${cUser}`).snapshotChanges().subscribe(profile => {
               console.log(profile.length);
+              if(this.count == 1) {
               if(profile.length == 0) {
-             this.navCtrl.setRoot(this.profile);
-              }
-              else {
-                this.navCtrl.setRoot(this.interestPage);
-              }
-         // const ab = this.afDatabase.database.ref(`profile/${currentUserUid}`)
-        }) 
-        // console.log(currentUserUid);
+           
+                this.navCtrl.setRoot(this.profile);
+                 }
+                 else{
+                   this.navCtrl.setRoot(this.interestPage);
+                 }
+                }
+                this.count = 2;
+        })
+
+
         })
       .catch(
         error => {

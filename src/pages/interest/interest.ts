@@ -28,6 +28,7 @@ export class InterestPage {
 
   sports = {} as Sports;
   event = EventPage;
+  skills = SkillsPage;
 
 basketballFunction(e:any){
     if(e.checked == true)  {
@@ -62,9 +63,9 @@ tennisFunction(e:any){
 
 addSports() {
 
-  this.afAuth.authState.take(1).subscribe(auth => {
+ this.afAuth.authState.take(1).subscribe(auth => {
     this.afDatabase.object(`sports/${auth.uid}`).set(this.sports)
-    .then ( data => this.navCtrl.setRoot(this.event))
+    .then ( data => this.navCtrl.setRoot(this.skills))
     
   })
 
@@ -72,23 +73,5 @@ addSports() {
 }
 
 
-  ionViewDidLoad() {
-    this.afAuth.authState.subscribe(data => {
-      if(data && data.email && data.uid) {
-        this.toast.create({
-          message: "Welcome to JumpIn App",
-          duration: 3000
-        }).present();
-
-        console.log(data.uid);
-       }
-      else {
-        this.toast.create({
-          message: 'Could not find authentication details',
-          duration: 3000
-        }).present();
-      }
-    })
-  }
 
 }

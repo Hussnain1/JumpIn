@@ -1,3 +1,4 @@
+import { EventPage } from './../event/event';
 import { InterestPage } from './../interest/interest';
 import { Profile } from './../../model/profile';
 import { Component } from '@angular/core';
@@ -21,21 +22,17 @@ export class UserProfilePage {
 
   profile = {} as Profile;
   interest = InterestPage
+  event = EventPage;
 
   constructor(public navCtrl: NavController, public navParams: NavParams, public afAuth: AngularFireAuth,
   private afDatabase: AngularFireDatabase) {
   }
 
-  ionViewDidLoad() {
-    console.log('ionViewDidLoad UserProfilePage');
-  }
-
   createProfile() {
-    
-    this.afAuth.authState.take(1).subscribe(auth => {
-      this.afDatabase.object(`profile/${auth.uid}`).set(this.profile)
+    const cUser = this.afAuth.auth.currentUser.uid;
+      this.afDatabase.object(`profile/${cUser}`).set(this.profile)
       .then(() => this.navCtrl.push(this.interest));
-    })
+   
   }
 
 }
