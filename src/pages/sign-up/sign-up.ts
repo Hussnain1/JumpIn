@@ -24,14 +24,28 @@ export class SignUpPage {
         const loading = this.loadingCtrl.create({
       content : 'Signing you up ...'
     });
+    
     loading.present();
     setTimeout(() => {
       this.afAuth.auth.createUserWithEmailAndPassword(user.email, user.password)
       .then(
         data => {
           loading.dismiss();
-          this.navCtrl.setRoot(this.Login);
-          
+          const alert = this.alertCtrl.create({
+            title : 'Account created!',
+            message : data.message,
+            buttons: [
+              {
+                text: 'Login Now',
+                handler: () => {
+                    this.navCtrl.setRoot(this.Login);
+                }
+              }
+              
+            ]
+            
+          });
+          alert.present();
         })
       .catch(
         error => {

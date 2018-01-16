@@ -1,11 +1,9 @@
 import { SkillsPage } from './../skills/skills';
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { IonicPage, NavController, NavParams, LoadingController } from 'ionic-angular';
 import { AngularFireAuth } from 'angularfire2/auth';
 import { AngularFireDatabase } from 'angularfire2/database';
-import { ToastController } from 'ionic-angular/components/toast/toast-controller';
 import { Sports } from '../../model/sports';
-import { EventPage } from '../event/event';
 
 /**
  * Generated class for the InterestPage page.
@@ -22,12 +20,10 @@ import { EventPage } from '../event/event';
 export class InterestPage {
 
   constructor(public navCtrl: NavController, public navParams: NavParams, public afAuth: AngularFireAuth, 
-  private afDatabase: AngularFireDatabase, private toast: ToastController) {
+  private afDatabase: AngularFireDatabase, private loadingCtrl: LoadingController) {
   }
 
-
   sports = {} as Sports;
-  event = EventPage;
   skills = SkillsPage;
 
 basketballFunction(e:any){
@@ -62,16 +58,16 @@ tennisFunction(e:any){
 
 
 addSports() {
-
- this.afAuth.authState.take(1).subscribe(auth => {
+  const loading = this.loadingCtrl.create({
+    content : 'Saving sports preferences ...'
+  });
+  loading.present();
+  setTimeout(() => {
+  this.afAuth.authState.take(1).subscribe(auth => {
     this.afDatabase.object(`sports/${auth.uid}`).set(this.sports)
     .then ( data => this.navCtrl.setRoot(this.skills))
-    
-  })
-
-
-}
-
-
-
+    })
+    loading.dismiss();
+  }, 2000); 
+  }
 }

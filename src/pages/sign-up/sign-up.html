@@ -1,42 +1,31 @@
-
-
 <ion-content>
     <ion-grid>
-      <ion-row>
-        <ion-col text-center>
-            <ion-icon class="loginIcon" name="ios-contacts-outline"></ion-icon>
-            <h1>SIGN UP</h1>
-        </ion-col>
-      </ion-row>
-      
-          <form #f="ngForm">
-                  
-            <ion-item>
-              <ion-label floating>Email</ion-label>
-              <ion-input type="text" name="email" [(ngModel)]="user.email" required></ion-input>
-            </ion-item>
-          
-            <ion-item>
-              <ion-label floating>Password</ion-label>
-              <ion-input type="password" name="password" [(ngModel)]="user.password" required></ion-input>
-            </ion-item>
-
-            <ion-item>
-              <ion-label floating>Confirm Password</ion-label>
-              <ion-input type="password" name="cfPassword" [(ngModel)]="user.confirmPass" required></ion-input>
-            </ion-item>
-                  
-                   
-                    <button class="loginButton" ion-button type="submit" block color="light" (click)="register(user)" 
-                    [disabled]="!f.valid">CREATE ACCOUNT</button>
-                   
-                  
-                  </form>
-        
-        <ion-row>
+       <ion-row>
+          <ion-col text-center>
+             <ion-icon class="loginIcon" name="ios-contacts-outline"></ion-icon>
+             <h1>SIGN UP</h1>
+          </ion-col>
+       </ion-row>
+       <form #f="ngForm">
+          <ion-item>
+             <ion-label floating>Email</ion-label>
+             <ion-input type="text" name="email" [(ngModel)]="user.email" required></ion-input>
+          </ion-item>
+          <ion-item>
+             <ion-label floating>Password</ion-label>
+             <ion-input type="password" name="password" [(ngModel)]="user.password" required></ion-input>
+          </ion-item>
+          <ion-item>
+             <ion-label floating>Confirm Password</ion-label>
+             <ion-input type="password" name="cfPassword" [(ngModel)]="user.confirmPass" required></ion-input>
+          </ion-item>
+          <button class="loginButton" ion-button type="submit" block color="light" (click)="register(user)" 
+          [disabled]="!f.valid">CREATE ACCOUNT</button>
+       </form>
+       <ion-row>
           <ion-col>
-              <button class="forgotPassword" ion-button clear block [navPush]="Login">Already a member? Sign In</button>
-              </ion-col>
-        </ion-row>
-      </ion-grid>
-  </ion-content>
+             <button class="forgotPassword" ion-button clear block [navPush]="Login">Already a member? Sign In</button>
+          </ion-col>
+       </ion-row>
+    </ion-grid>
+ </ion-content>
